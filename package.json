@@ -1,0 +1,44 @@
+{
+  "name": "oop-ts",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:tst": "vite --mode testing",
+    "build": "run-p type-check && vite build",
+    "build:dev": "run-p type-check && vite build --mode development",
+    "build:tst": "run-p type-check && vite build --mode testing",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "axios": "^1.6.2",
+    "js-cookie": "^3.0.5",
+    "register-service-worker": "^1.7.2",
+    "vue": "^3.3.8",
+    "vue-router": "^4.2.5"
+  },
+  "devDependencies": {
+    "@rollup/plugin-eslint": "^9.0.5",
+    "@types/js-cookie": "^3.0.6",
+    "@types/node": "^20.9.4",
+    "@vitejs/plugin-vue": "^4.5.0",
+    "@vue/eslint-config-prettier": "^8.0.0",
+    "eslint": "^8.54.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-vue": "^9.18.1",
+    "lint-staged": "^15.1.0",
+    "prettier": "^3.1.0",
+    "typescript": "^5.2.2",
+    "unplugin-auto-import": "^0.16.7",
+    "unplugin-icons": "^0.17.4",
+    "unplugin-vue-components": "^0.25.2",
+    "vite": "^5.0.0",
+    "vue-eslint-parser": "^9.3.2",
+    "vue-tsc": "^1.8.22",
+    "husky": "^8.0.0"
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix"
+  }
+}
