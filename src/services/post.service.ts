@@ -1,6 +1,6 @@
 import { BaseService } from './base.service'
 
-export class PostsService extends BaseService {
+export class PostService extends BaseService {
   static get entity () {
     return 'posts'
   }

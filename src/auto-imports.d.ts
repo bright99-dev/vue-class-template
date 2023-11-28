@@ -8,16 +8,21 @@ declare global {
   const ACCESS_TOKEN: typeof import('./constants/auth')['ACCESS_TOKEN']
   const AUTH_USER: typeof import('./constants/auth')['AUTH_USER']
   const AuthService: typeof import('./services/auth.service')['AuthService']
+  const BaseController: typeof import('./controllers/BaseController')['default']
   const BaseService: typeof import('./services/base.service')['BaseService']
   const EXPIRES: typeof import('./constants/auth')['EXPIRES']
   const EffectScope: typeof import('vue')['EffectScope']
   const Http: typeof import('./services/http.service')['Http']
   const LOCALKEY: typeof import('./constants/auth')['LOCALKEY']
   const PostController: typeof import('./controllers/PostController')['default']
-  const PostsService: typeof import('./services/posts.service')['PostsService']
+  const PostService: typeof import('./services/post.service')['PostService']
   const REFRESH_TOKEN: typeof import('./constants/auth')['REFRESH_TOKEN']
   const ROUTE: typeof import('./constants/error')['ROUTE']
+  const SubscriptionController: typeof import('./controllers/SubscriptionController')['default']
+  const SubscriptionService: typeof import('./services/subscription.service')['SubscriptionService']
   const TOKEN_TYPE: typeof import('./constants/auth')['TOKEN_TYPE']
+  const UserController: typeof import('./controllers/UserController')['default']
+  const UserService: typeof import('./services/user.service')['UserService']
   const addClass: typeof import('./utils/index.js')['addClass']
   const byteLength: typeof import('./utils/index.js')['byteLength']
   const cleanArray: typeof import('./utils/index.js')['cleanArray']
@@ -68,8 +73,6 @@ declare global {
   const param: typeof import('./utils/index.js')['param']
   const param2Obj: typeof import('./utils/index.js')['param2Obj']
   const parseTime: typeof import('./utils/index.js')['parseTime']
-  const postController: typeof import('./controllers/PostController.ts/index.js')['default']
-  const postModel: typeof import('./models/post.model')['default']
   const provide: typeof import('vue')['provide']
   const reactive: typeof import('vue')['reactive']
   const readonly: typeof import('vue')['readonly']
@@ -118,16 +121,21 @@ declare module 'vue' {
     readonly ACCESS_TOKEN: UnwrapRef<typeof import('./constants/auth')['ACCESS_TOKEN']>
     readonly AUTH_USER: UnwrapRef<typeof import('./constants/auth')['AUTH_USER']>
     readonly AuthService: UnwrapRef<typeof import('./services/auth.service')['AuthService']>
+    readonly BaseController: UnwrapRef<typeof import('./controllers/BaseController')['default']>
     readonly BaseService: UnwrapRef<typeof import('./services/base.service')['BaseService']>
     readonly EXPIRES: UnwrapRef<typeof import('./constants/auth')['EXPIRES']>
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
     readonly Http: UnwrapRef<typeof import('./services/http.service')['Http']>
     readonly LOCALKEY: UnwrapRef<typeof import('./constants/auth')['LOCALKEY']>
     readonly PostController: UnwrapRef<typeof import('./controllers/PostController')['default']>
-    readonly PostsService: UnwrapRef<typeof import('./services/posts.service')['PostsService']>
+    readonly PostService: UnwrapRef<typeof import('./services/post.service')['PostService']>
     readonly REFRESH_TOKEN: UnwrapRef<typeof import('./constants/auth')['REFRESH_TOKEN']>
     readonly ROUTE: UnwrapRef<typeof import('./constants/error')['ROUTE']>
+    readonly SubscriptionController: UnwrapRef<typeof import('./controllers/SubscriptionController')['default']>
+    readonly SubscriptionService: UnwrapRef<typeof import('./services/subscription.service')['SubscriptionService']>
     readonly TOKEN_TYPE: UnwrapRef<typeof import('./constants/auth')['TOKEN_TYPE']>
+    readonly UserController: UnwrapRef<typeof import('./controllers/UserController')['default']>
+    readonly UserService: UnwrapRef<typeof import('./services/user.service')['UserService']>
     readonly addClass: UnwrapRef<typeof import('./utils/index.js')['addClass']>
     readonly byteLength: UnwrapRef<typeof import('./utils/index.js')['byteLength']>
     readonly cleanArray: UnwrapRef<typeof import('./utils/index.js')['cleanArray']>
@@ -178,7 +186,6 @@ declare module 'vue' {
     readonly param2Obj: UnwrapRef<typeof import('./utils/index.js')['param2Obj']>
     readonly param: UnwrapRef<typeof import('./utils/index.js')['param']>
     readonly parseTime: UnwrapRef<typeof import('./utils/index.js')['parseTime']>
-    readonly postModel: UnwrapRef<typeof import('./models/post.model')['default']>
     readonly provide: UnwrapRef<typeof import('vue')['provide']>
     readonly reactive: UnwrapRef<typeof import('vue')['reactive']>
     readonly readonly: UnwrapRef<typeof import('vue')['readonly']>
@@ -220,16 +227,21 @@ declare module '@vue/runtime-core' {
     readonly ACCESS_TOKEN: UnwrapRef<typeof import('./constants/auth')['ACCESS_TOKEN']>
     readonly AUTH_USER: UnwrapRef<typeof import('./constants/auth')['AUTH_USER']>
     readonly AuthService: UnwrapRef<typeof import('./services/auth.service')['AuthService']>
+    readonly BaseController: UnwrapRef<typeof import('./controllers/BaseController')['default']>
     readonly BaseService: UnwrapRef<typeof import('./services/base.service')['BaseService']>
     readonly EXPIRES: UnwrapRef<typeof import('./constants/auth')['EXPIRES']>
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
     readonly Http: UnwrapRef<typeof import('./services/http.service')['Http']>
     readonly LOCALKEY: UnwrapRef<typeof import('./constants/auth')['LOCALKEY']>
     readonly PostController: UnwrapRef<typeof import('./controllers/PostController')['default']>
-    readonly PostsService: UnwrapRef<typeof import('./services/posts.service')['PostsService']>
+    readonly PostService: UnwrapRef<typeof import('./services/post.service')['PostService']>
     readonly REFRESH_TOKEN: UnwrapRef<typeof import('./constants/auth')['REFRESH_TOKEN']>
     readonly ROUTE: UnwrapRef<typeof import('./constants/error')['ROUTE']>
+    readonly SubscriptionController: UnwrapRef<typeof import('./controllers/SubscriptionController')['default']>
+    readonly SubscriptionService: UnwrapRef<typeof import('./services/subscription.service')['SubscriptionService']>
     readonly TOKEN_TYPE: UnwrapRef<typeof import('./constants/auth')['TOKEN_TYPE']>
+    readonly UserController: UnwrapRef<typeof import('./controllers/UserController')['default']>
+    readonly UserService: UnwrapRef<typeof import('./services/user.service')['UserService']>
     readonly addClass: UnwrapRef<typeof import('./utils/index.js')['addClass']>
     readonly byteLength: UnwrapRef<typeof import('./utils/index.js')['byteLength']>
     readonly cleanArray: UnwrapRef<typeof import('./utils/index.js')['cleanArray']>
@@ -280,7 +292,6 @@ declare module '@vue/runtime-core' {
     readonly param2Obj: UnwrapRef<typeof import('./utils/index.js')['param2Obj']>
     readonly param: UnwrapRef<typeof import('./utils/index.js')['param']>
     readonly parseTime: UnwrapRef<typeof import('./utils/index.js')['parseTime']>
-    readonly postModel: UnwrapRef<typeof import('./models/post.model')['default']>
     readonly provide: UnwrapRef<typeof import('vue')['provide']>
     readonly reactive: UnwrapRef<typeof import('vue')['reactive']>
     readonly readonly: UnwrapRef<typeof import('vue')['readonly']>
