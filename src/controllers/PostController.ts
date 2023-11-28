@@ -1,4 +1,4 @@
-interface IPostModel {
+interface IPostController {
   id: string;
   title: string;
   author: string;
@@ -8,7 +8,7 @@ interface IPostModel {
   updatedAt: string;
 }
 
-export default class PostModel {
+export default class PostController {
   static list = [];
   static listPublic = [];
   static single = null;
@@ -33,7 +33,7 @@ export default class PostModel {
     }
   }
 
-  static async create(formData: IPostModel): Promise<any> {
+  static async create(formData: IPostController): Promise<any> {
     try {
       const res = await PostsService.create(formData);
       return res.data;
@@ -45,13 +45,13 @@ export default class PostModel {
   static async getSingle(id: string): Promise<any> {
     try {
       const res = await PostsService.getSingle(id);
-      PostModel.single = res.data;
+      PostController.single = res.data;
     } catch (error) {
       console.log(error);
     }
   }
 
-  static async update(id: string, formData: Partial<IPostModel>): Promise<any> {
+  static async update(id: string, formData: Partial<IPostController>): Promise<any> {
     try {
       const res = await PostsService.update(id, formData);
       return res.data;
