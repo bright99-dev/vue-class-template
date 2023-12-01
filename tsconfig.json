@@ -26,6 +26,6 @@
       ]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "src/controllers/PostController.ts"],
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "src/models/PostModel.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

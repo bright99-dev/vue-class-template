@@ -1,7 +1,7 @@
 import { BaseService } from './base.service'
 
-export class UserService extends BaseService {
+export class CustomerService extends BaseService {
   static get entity () {
-    return 'users'
+    return 'customers'
   }
 }

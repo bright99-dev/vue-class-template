@@ -8,21 +8,52 @@ declare global {
   const ACCESS_TOKEN: typeof import('./constants/auth')['ACCESS_TOKEN']
   const AUTH_USER: typeof import('./constants/auth')['AUTH_USER']
   const AuthService: typeof import('./services/auth.service')['AuthService']
-  const BaseController: typeof import('./controllers/BaseController')['default']
+  const BaseModel: typeof import('./models/BaseModel')['BaseModel']
   const BaseService: typeof import('./services/base.service')['BaseService']
+  const CustomerModel: typeof import('./models/CustomerModel')['default']
+  const CustomerService: typeof import('./services/customer.service')['CustomerService']
   const EXPIRES: typeof import('./constants/auth')['EXPIRES']
   const EffectScope: typeof import('vue')['EffectScope']
+  const FORBIDDEN_ROUTE_NAME: typeof import('./constants/router')['FORBIDDEN_ROUTE_NAME']
+  const FORGOT_PASSWORD_ROUTE_NAME: typeof import('./constants/router')['FORGOT_PASSWORD_ROUTE_NAME']
+  const HOME_ROOT_ROUTE_NAME: typeof import('./constants/router')['HOME_ROOT_ROUTE_NAME']
   const Http: typeof import('./services/http.service')['Http']
   const LOCALKEY: typeof import('./constants/auth')['LOCALKEY']
-  const PostController: typeof import('./controllers/PostController')['default']
+  const LOGIN_ROUTE_NAME: typeof import('./constants/router')['LOGIN_ROUTE_NAME']
+  const NOTIFICATION_DURATION: typeof import('./constants/default')['NOTIFICATION_DURATION']
+  const NOT_FOUND_ROUTE_NAME: typeof import('./constants/router')['NOT_FOUND_ROUTE_NAME']
+  const OVERVIEW_ROUTE_NAME: typeof import('./constants/router')['OVERVIEW_ROUTE_NAME']
+  const PAGINATION_PAGER_COUNT: typeof import('./constants/default')['PAGINATION_PAGER_COUNT']
+  const PAGINATION_PAGE_SIZE: typeof import('./constants/default')['PAGINATION_PAGE_SIZE']
+  const PROFILE_ROUTE_NAME: typeof import('./constants/router')['PROFILE_ROUTE_NAME']
+  const PostModel: typeof import('./models/PostModel')['default']
   const PostService: typeof import('./services/post.service')['PostService']
   const REFRESH_TOKEN: typeof import('./constants/auth')['REFRESH_TOKEN']
+  const RESET_PASSWORD_ROUTE_NAME: typeof import('./constants/router')['RESET_PASSWORD_ROUTE_NAME']
   const ROUTE: typeof import('./constants/error')['ROUTE']
-  const SubscriptionController: typeof import('./controllers/SubscriptionController')['default']
+  const ROUTE_CREATE_NAME: typeof import('./constants/router')['ROUTE_CREATE_NAME']
+  const ROUTE_LIST_NAME: typeof import('./constants/router')['ROUTE_LIST_NAME']
+  const ROUTE_SINGLE_NAME: typeof import('./constants/router')['ROUTE_SINGLE_NAME']
+  const ROUTE_UPDATE_NAME: typeof import('./constants/router')['ROUTE_UPDATE_NAME']
+  const RULE_EMAIL: typeof import('./constants/rule')['RULE_EMAIL']
+  const RULE_EMAIL_REQUIRED: typeof import('./constants/rule')['RULE_EMAIL_REQUIRED']
+  const RULE_MAX_LENGTH: typeof import('./constants/rule')['RULE_MAX_LENGTH']
+  const RULE_PASSWORD: typeof import('./constants/rule')['RULE_PASSWORD']
+  const RULE_PASSWORD_REQUIRED: typeof import('./constants/rule')['RULE_PASSWORD_REQUIRED']
+  const RULE_PHONE: typeof import('./constants/rule')['RULE_PHONE']
+  const RULE_PHONE_REQUIRED: typeof import('./constants/rule')['RULE_PHONE_REQUIRED']
+  const RULE_REQUIRED: typeof import('./constants/rule')['RULE_REQUIRED']
+  const RULE_REQUIRED_SELECT: typeof import('./constants/rule')['RULE_REQUIRED_SELECT']
+  const RX_CURRENCY: typeof import('./constants/regex')['RX_CURRENCY']
+  const RX_NUMBER: typeof import('./constants/regex')['RX_NUMBER']
+  const RX_PASSWORD: typeof import('./constants/regex')['RX_PASSWORD']
+  const STRING_MAX_LENGTH: typeof import('./constants/default')['STRING_MAX_LENGTH']
+  const SubscriptionModel: typeof import('./models/SubscriptionModel')['default']
   const SubscriptionService: typeof import('./services/subscription.service')['SubscriptionService']
   const TOKEN_TYPE: typeof import('./constants/auth')['TOKEN_TYPE']
-  const UserController: typeof import('./controllers/UserController')['default']
-  const UserService: typeof import('./services/user.service')['UserService']
+  const UNEXPECTED_ROUTE_NAME: typeof import('./constants/router')['UNEXPECTED_ROUTE_NAME']
+  const UPLOAD_ACCEPT: typeof import('./constants/default')['UPLOAD_ACCEPT']
+  const UserModel: typeof import('./models/UserModel')['default']
   const addClass: typeof import('./utils/index.js')['addClass']
   const byteLength: typeof import('./utils/index.js')['byteLength']
   const cleanArray: typeof import('./utils/index.js')['cleanArray']
@@ -121,21 +152,50 @@ declare module 'vue' {
     readonly ACCESS_TOKEN: UnwrapRef<typeof import('./constants/auth')['ACCESS_TOKEN']>
     readonly AUTH_USER: UnwrapRef<typeof import('./constants/auth')['AUTH_USER']>
     readonly AuthService: UnwrapRef<typeof import('./services/auth.service')['AuthService']>
-    readonly BaseController: UnwrapRef<typeof import('./controllers/BaseController')['default']>
+    readonly BaseModel: UnwrapRef<typeof import('./models/BaseModel')['BaseModel']>
     readonly BaseService: UnwrapRef<typeof import('./services/base.service')['BaseService']>
+    readonly CustomerService: UnwrapRef<typeof import('./services/customer.service')['CustomerService']>
     readonly EXPIRES: UnwrapRef<typeof import('./constants/auth')['EXPIRES']>
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
+    readonly FORBIDDEN_ROUTE_NAME: UnwrapRef<typeof import('./constants/router')['FORBIDDEN_ROUTE_NAME']>
+    readonly FORGOT_PASSWORD_ROUTE_NAME: UnwrapRef<typeof import('./constants/router')['FORGOT_PASSWORD_ROUTE_NAME']>
+    readonly HOME_ROOT_ROUTE_NAME: UnwrapRef<typeof import('./constants/router')['HOME_ROOT_ROUTE_NAME']>
     readonly Http: UnwrapRef<typeof import('./services/http.service')['Http']>
     readonly LOCALKEY: UnwrapRef<typeof import('./constants/auth')['LOCALKEY']>
-    readonly PostController: UnwrapRef<typeof import('./controllers/PostController')['default']>
+    readonly LOGIN_ROUTE_NAME: UnwrapRef<typeof import('./constants/router')['LOGIN_ROUTE_NAME']>
+    readonly NOTIFICATION_DURATION: UnwrapRef<typeof import('./constants/default')['NOTIFICATION_DURATION']>
+    readonly NOT_FOUND_ROUTE_NAME: UnwrapRef<typeof import('./constants/router')['NOT_FOUND_ROUTE_NAME']>
+    readonly OVERVIEW_ROUTE_NAME: UnwrapRef<typeof import('./constants/router')['OVERVIEW_ROUTE_NAME']>
+    readonly PAGINATION_PAGER_COUNT: UnwrapRef<typeof import('./constants/default')['PAGINATION_PAGER_COUNT']>
+    readonly PAGINATION_PAGE_SIZE: UnwrapRef<typeof import('./constants/default')['PAGINATION_PAGE_SIZE']>
+    readonly PROFILE_ROUTE_NAME: UnwrapRef<typeof import('./constants/router')['PROFILE_ROUTE_NAME']>
+    readonly PostModel: UnwrapRef<typeof import('./models/PostModel')['default']>
     readonly PostService: UnwrapRef<typeof import('./services/post.service')['PostService']>
     readonly REFRESH_TOKEN: UnwrapRef<typeof import('./constants/auth')['REFRESH_TOKEN']>
+    readonly RESET_PASSWORD_ROUTE_NAME: UnwrapRef<typeof import('./constants/router')['RESET_PASSWORD_ROUTE_NAME']>
     readonly ROUTE: UnwrapRef<typeof import('./constants/error')['ROUTE']>
-    readonly SubscriptionController: UnwrapRef<typeof import('./controllers/SubscriptionController')['default']>
+    readonly ROUTE_CREATE_NAME: UnwrapRef<typeof import('./constants/router')['ROUTE_CREATE_NAME']>
+    readonly ROUTE_LIST_NAME: UnwrapRef<typeof import('./constants/router')['ROUTE_LIST_NAME']>
+    readonly ROUTE_SINGLE_NAME: UnwrapRef<typeof import('./constants/router')['ROUTE_SINGLE_NAME']>
+    readonly ROUTE_UPDATE_NAME: UnwrapRef<typeof import('./constants/router')['ROUTE_UPDATE_NAME']>
+    readonly RULE_EMAIL: UnwrapRef<typeof import('./constants/rule')['RULE_EMAIL']>
+    readonly RULE_EMAIL_REQUIRED: UnwrapRef<typeof import('./constants/rule')['RULE_EMAIL_REQUIRED']>
+    readonly RULE_MAX_LENGTH: UnwrapRef<typeof import('./constants/rule')['RULE_MAX_LENGTH']>
+    readonly RULE_PASSWORD: UnwrapRef<typeof import('./constants/rule')['RULE_PASSWORD']>
+    readonly RULE_PASSWORD_REQUIRED: UnwrapRef<typeof import('./constants/rule')['RULE_PASSWORD_REQUIRED']>
+    readonly RULE_PHONE: UnwrapRef<typeof import('./constants/rule')['RULE_PHONE']>
+    readonly RULE_PHONE_REQUIRED: UnwrapRef<typeof import('./constants/rule')['RULE_PHONE_REQUIRED']>
+    readonly RULE_REQUIRED: UnwrapRef<typeof import('./constants/rule')['RULE_REQUIRED']>
+    readonly RULE_REQUIRED_SELECT: UnwrapRef<typeof import('./constants/rule')['RULE_REQUIRED_SELECT']>
+    readonly RX_CURRENCY: UnwrapRef<typeof import('./constants/regex')['RX_CURRENCY']>
+    readonly RX_NUMBER: UnwrapRef<typeof import('./constants/regex')['RX_NUMBER']>
+    readonly RX_PASSWORD: UnwrapRef<typeof import('./constants/regex')['RX_PASSWORD']>
+    readonly STRING_MAX_LENGTH: UnwrapRef<typeof import('./constants/default')['STRING_MAX_LENGTH']>
+    readonly SubscriptionModel: UnwrapRef<typeof import('./models/SubscriptionModel')['default']>
     readonly SubscriptionService: UnwrapRef<typeof import('./services/subscription.service')['SubscriptionService']>
     readonly TOKEN_TYPE: UnwrapRef<typeof import('./constants/auth')['TOKEN_TYPE']>
-    readonly UserController: UnwrapRef<typeof import('./controllers/UserController')['default']>
-    readonly UserService: UnwrapRef<typeof import('./services/user.service')['UserService']>
+    readonly UNEXPECTED_ROUTE_NAME: UnwrapRef<typeof import('./constants/router')['UNEXPECTED_ROUTE_NAME']>
+    readonly UPLOAD_ACCEPT: UnwrapRef<typeof import('./constants/default')['UPLOAD_ACCEPT']>
     readonly addClass: UnwrapRef<typeof import('./utils/index.js')['addClass']>
     readonly byteLength: UnwrapRef<typeof import('./utils/index.js')['byteLength']>
     readonly cleanArray: UnwrapRef<typeof import('./utils/index.js')['cleanArray']>
@@ -227,21 +287,50 @@ declare module '@vue/runtime-core' {
     readonly ACCESS_TOKEN: UnwrapRef<typeof import('./constants/auth')['ACCESS_TOKEN']>
     readonly AUTH_USER: UnwrapRef<typeof import('./constants/auth')['AUTH_USER']>
     readonly AuthService: UnwrapRef<typeof import('./services/auth.service')['AuthService']>
-    readonly BaseController: UnwrapRef<typeof import('./controllers/BaseController')['default']>
+    readonly BaseModel: UnwrapRef<typeof import('./models/BaseModel')['BaseModel']>
     readonly BaseService: UnwrapRef<typeof import('./services/base.service')['BaseService']>
+    readonly CustomerService: UnwrapRef<typeof import('./services/customer.service')['CustomerService']>
     readonly EXPIRES: UnwrapRef<typeof import('./constants/auth')['EXPIRES']>
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
+    readonly FORBIDDEN_ROUTE_NAME: UnwrapRef<typeof import('./constants/router')['FORBIDDEN_ROUTE_NAME']>
+    readonly FORGOT_PASSWORD_ROUTE_NAME: UnwrapRef<typeof import('./constants/router')['FORGOT_PASSWORD_ROUTE_NAME']>
+    readonly HOME_ROOT_ROUTE_NAME: UnwrapRef<typeof import('./constants/router')['HOME_ROOT_ROUTE_NAME']>
     readonly Http: UnwrapRef<typeof import('./services/http.service')['Http']>
     readonly LOCALKEY: UnwrapRef<typeof import('./constants/auth')['LOCALKEY']>
-    readonly PostController: UnwrapRef<typeof import('./controllers/PostController')['default']>
+    readonly LOGIN_ROUTE_NAME: UnwrapRef<typeof import('./constants/router')['LOGIN_ROUTE_NAME']>
+    readonly NOTIFICATION_DURATION: UnwrapRef<typeof import('./constants/default')['NOTIFICATION_DURATION']>
+    readonly NOT_FOUND_ROUTE_NAME: UnwrapRef<typeof import('./constants/router')['NOT_FOUND_ROUTE_NAME']>
+    readonly OVERVIEW_ROUTE_NAME: UnwrapRef<typeof import('./constants/router')['OVERVIEW_ROUTE_NAME']>
+    readonly PAGINATION_PAGER_COUNT: UnwrapRef<typeof import('./constants/default')['PAGINATION_PAGER_COUNT']>
+    readonly PAGINATION_PAGE_SIZE: UnwrapRef<typeof import('./constants/default')['PAGINATION_PAGE_SIZE']>
+    readonly PROFILE_ROUTE_NAME: UnwrapRef<typeof import('./constants/router')['PROFILE_ROUTE_NAME']>
+    readonly PostModel: UnwrapRef<typeof import('./models/PostModel')['default']>
     readonly PostService: UnwrapRef<typeof import('./services/post.service')['PostService']>
     readonly REFRESH_TOKEN: UnwrapRef<typeof import('./constants/auth')['REFRESH_TOKEN']>
+    readonly RESET_PASSWORD_ROUTE_NAME: UnwrapRef<typeof import('./constants/router')['RESET_PASSWORD_ROUTE_NAME']>
     readonly ROUTE: UnwrapRef<typeof import('./constants/error')['ROUTE']>
-    readonly SubscriptionController: UnwrapRef<typeof import('./controllers/SubscriptionController')['default']>
+    readonly ROUTE_CREATE_NAME: UnwrapRef<typeof import('./constants/router')['ROUTE_CREATE_NAME']>
+    readonly ROUTE_LIST_NAME: UnwrapRef<typeof import('./constants/router')['ROUTE_LIST_NAME']>
+    readonly ROUTE_SINGLE_NAME: UnwrapRef<typeof import('./constants/router')['ROUTE_SINGLE_NAME']>
+    readonly ROUTE_UPDATE_NAME: UnwrapRef<typeof import('./constants/router')['ROUTE_UPDATE_NAME']>
+    readonly RULE_EMAIL: UnwrapRef<typeof import('./constants/rule')['RULE_EMAIL']>
+    readonly RULE_EMAIL_REQUIRED: UnwrapRef<typeof import('./constants/rule')['RULE_EMAIL_REQUIRED']>
+    readonly RULE_MAX_LENGTH: UnwrapRef<typeof import('./constants/rule')['RULE_MAX_LENGTH']>
+    readonly RULE_PASSWORD: UnwrapRef<typeof import('./constants/rule')['RULE_PASSWORD']>
+    readonly RULE_PASSWORD_REQUIRED: UnwrapRef<typeof import('./constants/rule')['RULE_PASSWORD_REQUIRED']>
+    readonly RULE_PHONE: UnwrapRef<typeof import('./constants/rule')['RULE_PHONE']>
+    readonly RULE_PHONE_REQUIRED: UnwrapRef<typeof import('./constants/rule')['RULE_PHONE_REQUIRED']>
+    readonly RULE_REQUIRED: UnwrapRef<typeof import('./constants/rule')['RULE_REQUIRED']>
+    readonly RULE_REQUIRED_SELECT: UnwrapRef<typeof import('./constants/rule')['RULE_REQUIRED_SELECT']>
+    readonly RX_CURRENCY: UnwrapRef<typeof import('./constants/regex')['RX_CURRENCY']>
+    readonly RX_NUMBER: UnwrapRef<typeof import('./constants/regex')['RX_NUMBER']>
+    readonly RX_PASSWORD: UnwrapRef<typeof import('./constants/regex')['RX_PASSWORD']>
+    readonly STRING_MAX_LENGTH: UnwrapRef<typeof import('./constants/default')['STRING_MAX_LENGTH']>
+    readonly SubscriptionModel: UnwrapRef<typeof import('./models/SubscriptionModel')['default']>
     readonly SubscriptionService: UnwrapRef<typeof import('./services/subscription.service')['SubscriptionService']>
     readonly TOKEN_TYPE: UnwrapRef<typeof import('./constants/auth')['TOKEN_TYPE']>
-    readonly UserController: UnwrapRef<typeof import('./controllers/UserController')['default']>
-    readonly UserService: UnwrapRef<typeof import('./services/user.service')['UserService']>
+    readonly UNEXPECTED_ROUTE_NAME: UnwrapRef<typeof import('./constants/router')['UNEXPECTED_ROUTE_NAME']>
+    readonly UPLOAD_ACCEPT: UnwrapRef<typeof import('./constants/default')['UPLOAD_ACCEPT']>
     readonly addClass: UnwrapRef<typeof import('./utils/index.js')['addClass']>
     readonly byteLength: UnwrapRef<typeof import('./utils/index.js')['byteLength']>
     readonly cleanArray: UnwrapRef<typeof import('./utils/index.js')['cleanArray']>
